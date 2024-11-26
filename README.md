@@ -35,3 +35,19 @@ Clone this repository and install dependencies:
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 pip install -r requirements.txt
+```
+
+## 📂 Project Structure
+```bash
+├── ai_model/
+│   ├── model.py          # AI algorithms for near-duplicate detection
+│   ├── training_data/    # Datasets for training and testing
+├── cli_tool/
+│   ├── hash_utils.py     # Hashing utilities
+│   ├── main.py           # CLI interface
+├── README.md             # Documentation
+```
+
+## 📜 License
+All Rights Reserved.
+No part of this repository may be reproduced, distributed, or transmitted in any form without prior written permission. See the LICENSE file for more details.
