@@ -35,13 +35,17 @@ pip install -r requirements.txt
 
 ## 📂 Project Structure
 ```bash
+project/
 ├── ai_model/
-│   ├── model.py          # AI algorithms for near-duplicate detection
-│   ├── training_data/    # Datasets for training and testing
+│   ├── model.py          # AI-related logic
+│   ├── training_data/    # (Optional) Add example datasets if allowed
 ├── cli_tool/
-│   ├── hash_utils.py     # Hashing utilities
-│   ├── main.py           # CLI interface
+│   ├── hash_utils.py     # Hashing algorithms
+│   ├── main.py           # CLI entry point
+├── LICENSE               # License file
 ├── README.md             # Documentation
+├── requirements.txt      # Dependencies
+└── .gitignore            # Ignore unnecessary files
 ```
 
 ## 📜 License
