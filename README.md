@@ -38,7 +38,7 @@ pip install -r requirements.txt
 project/
 ├── ai_model/
 │   ├── model.py          # AI-related logic
-│   ├── training_data/    # (Optional) Add example datasets if allowed
+│   ├── training_data/    # Add example datasets if allowed
 ├── cli_tool/
 │   ├── hash_utils.py     # Hashing algorithms
 │   ├── main.py           # CLI entry point
