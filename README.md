@@ -1,7 +1,5 @@
 # **AI-Enhanced Forensic Duplicate Detection CLI**
 
-![Project Logo](https://via.placeholder.com/500x150?text=Project+Logo) <!-- Replace with your project logo -->
-
 > **A cutting-edge CLI tool leveraging AI for efficient duplicate and near-duplicate file detection, designed for digital forensics and data integrity management.**
 
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red) 
@@ -22,8 +20,6 @@
 ## **📽 Demo**
 
 > **Coming Soon!**
-  
-![Demo Animation](https://via.placeholder.com/800x400?text=Demo+GIF+Placeholder) <!-- Replace with a GIF or animation showcasing your tool -->
 
 ---
 
