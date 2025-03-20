@@ -46,36 +46,37 @@ python -m pip install -r requirements.txt
 ```bash
 project/
 ├── ai_model/
-│   ├── model.py                # AI-related logic
-│   ├── training_data/          # Add example datasets if allowed
+│   ├── model.py                # AI model for file grouping
+│   ├── train_model.py          # Trains the AI model
+│   ├── data/                   # Stores training data
+│   │   ├── file_patterns.csv   # Example file movement patterns
 │
-cli_tool/
-├── hashing/                    # Handles all hash-based duplicate detection
-│   ├── hash_utils.py           # Exact hashing (MD5, SHA-1, SHA-256)
-│   ├── perceptual_hash.py      # AI-based near-duplicate detection
+├── cli_tool/
+│   ├── hashing/
+│   │   ├── hash_utils.py       # Exact hashing (MD5, SHA-1, SHA-256)
+│   │   ├── perceptual_hash.py  # AI-based near-duplicate detection
 │
-├── processing/                 # Core logic for duplicate detection
-│   ├── duplicate_finder.py     # Calls hashing functions & AI model
-│   ├── file_handler.py         # Manages file operations
+│   ├── processing/
+│   │   ├── duplicate_finder.py # Calls hashing functions & AI model
+│   │   ├── file_handler.py     # Manages file operations
+│   │   ├── file_search.py      # AI-driven search function (NEW)
 │
-├── interface/                  # CLI entry point and argument parsing
-│   ├── main.py                 # CLI tool entry point
-│   ├── commands.py             # Command-line functionalities
+│   ├── interface/
+│   │   ├── main.py             # CLI entry point
+│   │   ├── commands.py         # Command-line functionalities
 │
-├── __init__.py                 # Makes the folder a Python package
+├── database/
+│   ├── db_handler.py           # Handles saving/loading hash results
 │
-database/                       # Stores results
-├── db_handler.py               # Handles saving/loading hash results
+├── logs/
+│   ├── log_handler.py          # Manages logging
 │
-logs/                           # Logging system
-├── log_handler.py              # Manages logging
+├── reports/
+│   ├── report_generator.py     # Generates reports from scan results
 │
-reports/                        # Report generation system
-├── report_generator.py         # Generates reports from scan results
-│
-LICENSE                         # License file
-README.md                       # Documentation
-requirements.txt                # Dependencies
+LICENSE
+README.md
+requirements.txt
 ```
 
 ## 📜 License
