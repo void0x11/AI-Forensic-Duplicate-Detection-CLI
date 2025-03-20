@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ```
 
 Install on Windows:
-```powershell
+```bash
 python -m pip install -r requirements.txt
 ```
 
