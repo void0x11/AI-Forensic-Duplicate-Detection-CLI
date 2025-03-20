@@ -30,7 +30,16 @@ Clone this repository and install dependencies:
 ```bash
 git clone https://github.com/void0x11/AI-Forensic-Duplicate-Detection-CLI
 cd AI-Forensic-Duplicate-Detection-CLI
+```
+
+Install on Linux:
+```bash
 pip install -r requirements.txt
+```
+
+Install on Windows:
+```powershell
+python -m pip install -r requirements.txt
 ```
 
 ## 📂 Project Structure
