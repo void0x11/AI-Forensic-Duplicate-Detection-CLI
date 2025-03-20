@@ -54,18 +54,18 @@ cli_tool/
 │
 ├── __init__.py           # Makes the folder a Python package
 │
-├── database/             # Stores results
-│   ├── db_handler.py    # Handles saving/loading hash results
+database/             # Stores results
+├── db_handler.py    # Handles saving/loading hash results
 │
-├── logs/                 # Logging system
-│   ├── log_handler.py   # Manages logging
+logs/                 # Logging system
+├── log_handler.py   # Manages logging
 │
-├── reports/              # Report generation system
-│   ├── report_generator.py  # Generates reports from scan results
+reports/              # Report generation system
+├── report_generator.py  # Generates reports from scan results
 │
-├── LICENSE               # License file
-├── README.md             # Documentation
-├── requirements.txt      # Dependencies
+LICENSE               # License file
+README.md             # Documentation
+requirements.txt      # Dependencies
 └── .gitignore            # Ignore unnecessary files
 ```
 
