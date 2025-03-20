@@ -39,6 +39,7 @@ project/
 ├── ai_model/
 │   ├── model.py          # AI-related logic
 │   ├── training_data/    # Add example datasets if allowed
+│
 cli_tool/
 ├── hashing/              # Handles all hash-based duplicate detection
 │   ├── hash_utils.py    # Exact hashing (MD5, SHA-1, SHA-256)
@@ -66,7 +67,6 @@ reports/              # Report generation system
 LICENSE               # License file
 README.md             # Documentation
 requirements.txt      # Dependencies
-└── .gitignore            # Ignore unnecessary files
 ```
 
 ## 📜 License
