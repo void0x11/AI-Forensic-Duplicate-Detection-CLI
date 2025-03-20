@@ -1,0 +1,5 @@
+# AI-Based Similarity (For Day 2)
+imagehash
+datasketch
+pillow
+numpy

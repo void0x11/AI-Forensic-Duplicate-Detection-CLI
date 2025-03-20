@@ -28,8 +28,8 @@
 Clone this repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/void0x11/AI-Forensic-Duplicate-Detection-CLI
+cd AI-Forensic-Duplicate-Detection-CLI
 pip install -r requirements.txt
 ```
 
@@ -39,9 +39,30 @@ project/
 ├── ai_model/
 │   ├── model.py          # AI-related logic
 │   ├── training_data/    # Add example datasets if allowed
-├── cli_tool/
-│   ├── hash_utils.py     # Hashing algorithms
-│   ├── main.py           # CLI entry point
+cli_tool/
+├── hashing/              # Handles all hash-based duplicate detection
+│   ├── hash_utils.py    # Exact hashing (MD5, SHA-1, SHA-256)
+│   ├── perceptual_hash.py # AI-based near-duplicate detection
+│
+├── processing/           # Core logic for duplicate detection
+│   ├── duplicate_finder.py # Calls hashing functions & AI model
+│   ├── file_handler.py   # Manages file operations
+│
+├── interface/            # CLI entry point and argument parsing
+│   ├── main.py         # CLI tool entry point
+│   ├── commands.py      # Command-line functionalities
+│
+├── __init__.py           # Makes the folder a Python package
+│
+├── database/             # Stores results
+│   ├── db_handler.py    # Handles saving/loading hash results
+│
+├── logs/                 # Logging system
+│   ├── log_handler.py   # Manages logging
+│
+├── reports/              # Report generation system
+│   ├── report_generator.py  # Generates reports from scan results
+│
 ├── LICENSE               # License file
 ├── README.md             # Documentation
 ├── requirements.txt      # Dependencies
