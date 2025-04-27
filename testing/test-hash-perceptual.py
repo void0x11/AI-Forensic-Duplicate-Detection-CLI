@@ -38,6 +38,6 @@ def test_perceptual_hash(image1_path, image2_path):
 
 if __name__ == "__main__":
     # Example images (update these paths as needed)
-    img1 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image3.jpg"
-    img2 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image7.jpg"
+    img1 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image5.jpg"
+    img2 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image6.jpg"
     test_perceptual_hash(img1, img2)

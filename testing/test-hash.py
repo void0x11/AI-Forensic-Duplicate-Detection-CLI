@@ -13,6 +13,7 @@ def test_single_file_hash(file_path):
     print(f"SHA-1:  {sha1}")
     print(f"SHA-256:{sha256}")
 
+
 def test_directory_hash(directory_path):
     """
     Tests hash computation for all files in a directory.
@@ -24,6 +25,7 @@ def test_directory_hash(directory_path):
         print(f"\nFile: {file_path}")
         for alg, h in hash_dict.items():
             print(f"  {alg.upper()}: {h}")
+
 
 if __name__ == "__main__":
     # Example usage

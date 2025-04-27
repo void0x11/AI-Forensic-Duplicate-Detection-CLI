@@ -1,0 +1,27 @@
+Exact File Hashing (MD5, SHA-1, SHA-256)
+
+Perceptual Image Hashing (pHash) + Similarity Decision Tree
+
+Near Duplicate Detection for Images
+
+Search Strategies:
+
+Full System Scan
+
+Image Files Only
+
+Document Files Only
+
+Executables Only
+
+Custom Extension Filtering
+
+
+🛠️ Planned Future Features:
+- Deep AI-Based Duplicate Detection (for Near-Duplicates)
+
+- Linux Libraries Scanning Strategy (*.so, *.so.*)
+
+- Export Results to reports
+
+- Batch Comparative Analysis
