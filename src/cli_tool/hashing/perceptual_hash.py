@@ -58,7 +58,7 @@ def analyze_perceptual_hash_similarity(hash1, hash2):
     similarity = (1 - dist / total_bits) * 100
 
     if similarity >= 98:
-        return 0, dist, similarity   # IDENTICAL
+        return 0, dist, similarity  # IDENTICAL
     elif similarity >= 95:
         return 1, dist, similarity  # HIGHLY SIMILAR
     elif similarity >= 80:
