@@ -8,38 +8,36 @@ from load_modules import modules
 # -*- coding: utf-8 -*-
 
 
-def test_perceptual_hash(image1_path, image2_path, similarity_threshold=98):
-
+def test_perceptual_hash(image1_path, image2_path):
     """
-    Tests perceptual hash similarity between two images.
-
-    Args:
-        image1_path (str): Path to the first image.
-        image2_path (str): Path to the second image.
-        similarity_threshold (float): Percentage threshold to consider images similar.
+    Tests perceptual hash similarity between two images and classifies based on similarity level.
     """
-    
     hash1 = modules.compute_phash(image1_path)
     hash2 = modules.compute_phash(image2_path)
 
-    print(f"\npHash of {image1_path}: {hash1}")
-    print(f"\npHash of {image2_path}: {hash2}")
+    print(f"pHash of {image1_path}: {hash1}")
+    print(f"pHash of {image2_path}: {hash2}")
 
-    dist = modules.hamming_distance(hash1, hash2)
-    total_bits = len(hash1)
+    # Now receiving 3 values
+    flag, dist, similarity = modules.analyze_perceptual_hash_similarity(hash1, hash2)
 
-    similarity = (1 - dist / total_bits) * 100
     print(f"Hamming Distance: {dist}")
     print(f"Similarity: {similarity:.2f}%")
 
-    if similarity >= similarity_threshold:
-        print(f"Result: Images are perceptually similar! [OK]")
+    if flag == 0:
+        print("Decision: Images are IDENTICAL or nearly identical. [✓]")
+    elif flag == 1:
+        print("Decision: Images are HIGHLY similar with minor differences. [~]")
+    elif flag == 2:
+        print("Decision: Images have moderate similarity. RECOMMENDED for AI deep analysis. [!]")
+    elif flag == 3:
+        print("Decision: Images are DIFFERENT. [X]")
     else:
-        print(f"Result: Images are different. [X]")
+        print("Decision: Unknown similarity level. [?]")
 
 
 if __name__ == "__main__":
     # Example images (update these paths as needed)
-    img1 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image5.jpg"
-    img2 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image6.jpg"
+    img1 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image3.jpg"
+    img2 = r"C:\Users\ahmed\OneDrive - Higher Technological Institute\Github\AI-Forensic-Duplicate-Detection-CLI\src\ai_model\sample_cases\image7.jpg"
     test_perceptual_hash(img1, img2)

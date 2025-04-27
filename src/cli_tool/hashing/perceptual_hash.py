@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 def compute_phash(image_path):
     """
     Computes the basic perceptual hash (pHash) of an image.
@@ -24,6 +25,7 @@ def compute_phash(image_path):
 
     return hash_str
 
+
 def hamming_distance(hash1, hash2):
     """
     Computes the Hamming distance between two binary hash strings.
@@ -38,3 +40,28 @@ def hamming_distance(hash1, hash2):
     if len(hash1) != len(hash2):
         raise ValueError("Hashes must have the same length.")
     return sum(c1 != c2 for c1, c2 in zip(hash1, hash2))
+
+
+def analyze_perceptual_hash_similarity(hash1, hash2):
+    """
+    Analyzes similarity between two perceptual hashes and returns a flag.
+
+    Args:
+        hash1 (str): First perceptual hash.
+        hash2 (str): Second perceptual hash.
+
+    Returns:
+        int: Flag number indicating similarity category.
+    """
+    dist = hamming_distance(hash1, hash2)
+    total_bits = len(hash1)
+    similarity = (1 - dist / total_bits) * 100
+
+    if similarity >= 98:
+        return 0, dist, similarity   # IDENTICAL
+    elif similarity >= 95:
+        return 1, dist, similarity  # HIGHLY SIMILAR
+    elif similarity >= 80:
+        return 2, dist, similarity  # NEEDS DEEP ANALYSIS
+    else:
+        return 3, dist, similarity  # DIFFERENT
