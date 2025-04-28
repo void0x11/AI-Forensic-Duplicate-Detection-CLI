@@ -1,3 +1,5 @@
+import os
+import platform
 import cmd
 import random
 from ascii_art import random_ascii_art
@@ -29,7 +31,7 @@ def colorful_ascii():
 
 class DuplicateDetectionShell(cmd.Cmd):
     intro = colorful_ascii() + "\nType help or ? to list commands.\n"
-    prompt = "cli_tool> "
+    prompt = "Dupli-HQ> "
 
     # Session settings
     settings = {
@@ -75,4 +77,8 @@ class DuplicateDetectionShell(cmd.Cmd):
         super().do_help(arg)
 
 if __name__ == "__main__":
+    if platform.system() == "Windows":
+        os.system('cls')
+    else:
+        os.system('clear')
     DuplicateDetectionShell().cmdloop()
