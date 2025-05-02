@@ -1,14 +1,4 @@
-
-# Module Importing Manually (falla7y)
-import sys
-import os
-
-module_path = "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/cli_tool/hashing/"
-if module_path not in sys.path:
-    sys.path.append(module_path)
-import perceptual_hash as modules
-
-#____________________________________________________________________________________________________
+from loader import pcphash as modules
 
 
 # This script tests the perceptual hash similarity between two images using the perceptual hash algorithm.
