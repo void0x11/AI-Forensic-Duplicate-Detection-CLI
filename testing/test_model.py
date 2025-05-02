@@ -21,7 +21,9 @@ print(f"Similarity between images: {similarity:.4f}")
 
 # Optional: Simple verdict
 threshold = 0.90
+
 if similarity > threshold:
     print("✅ Images are near-duplicates!")
+    
 else:
     print("❌ Images are different.")
