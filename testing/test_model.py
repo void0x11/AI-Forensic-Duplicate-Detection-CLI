@@ -1,5 +1,4 @@
 from ai_model import model
-from model import load_model, extract_features
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load the model once
