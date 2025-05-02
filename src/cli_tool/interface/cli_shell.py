@@ -31,7 +31,7 @@ def colorful_ascii():
 
 class DuplicateDetectionShell(cmd.Cmd):
     intro = colorful_ascii() + "\nType help or ? to list commands.\n"
-    prompt = "Dupli-HQ> "
+    prompt = "dupli-hq> "
 
     # Session settings
     settings = {
