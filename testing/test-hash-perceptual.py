@@ -1,4 +1,15 @@
-from load_modules import modules
+
+# Module Importing Manually (falla7y)
+import sys
+import os
+
+module_path = "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/cli_tool/hashing/"
+if module_path not in sys.path:
+    sys.path.append(module_path)
+import perceptual_hash as modules
+
+#____________________________________________________________________________________________________
+
 
 # This script tests the perceptual hash similarity between two images using the perceptual hash algorithm.
 # It computes the perceptual hash for each image, calculates the Hamming distance between the hashes, and determines if the images are similar based on a specified threshold.
@@ -6,7 +17,6 @@ from load_modules import modules
 # The Hamming distance is used to quantify the difference between the two hashes, and a similarity percentage is calculated based on this distance.
 # The script prints the perceptual hashes, Hamming distance, similarity percentage, and whether the images are considered perceptually similar or different.
 # -*- coding: utf-8 -*-
-
 
 def test_perceptual_hash(image1_path, image2_path):
     """

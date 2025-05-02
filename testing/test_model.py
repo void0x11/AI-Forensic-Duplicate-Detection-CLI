@@ -1,5 +1,11 @@
-from ai_model import model
-from sklearn.metrics.pairwise import cosine_similarity
+import sys
+import os
+
+module_path = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model"
+if module_path not in sys.path:
+    sys.path.append(module_path)
+
+import model as model
 
 # Load the model once
 model = load_model()
