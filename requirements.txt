@@ -10,3 +10,4 @@ torchvision
 PIL
 scikit-learn
 pathlib
+open_clip_torch
