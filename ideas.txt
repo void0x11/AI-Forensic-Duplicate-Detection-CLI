@@ -25,3 +25,21 @@ Custom Extension Filtering
 - Export Results to reports
 
 - Batch Comparative Analysis
+
+
+Images
+| الموديل               | النوع               | الدقة والاعتمادية                                        |
+| --------------------- | ------------------- | --------------------------------------------------      |
+| ✅ *CLIP (ViT-B-32)* | Transformer-based   | ممتاز للتشابه العام والمعنوي (حتى لو الصور معدّلة)        |
+| ResNet50 / ResNet101  | CNN                 | قوي كـ feature extractor بس حساس للتعديلات               |
+| EfficientNet (B0–B7)  | CNN                 | أدق من ResNet وأخف، ممتاز في mobile                     |
+| DINOv2                | Self-Supervised ViT | رائع بدون تصنيفات، قوي للـ embeddings                   |
+
+
+Text Files
+| الموديل                     | نوعه               | ميزته                                              |
+| --------------------------- | ------------------ | ------------------------------------------------   |
+| ✅ *Sentence-BERT (SBERT)* | Transformer (BERT) | أفضل موديل لـ **semantic similarity** بين النصوص    |
+| MiniLM                      | Transformer صغير   | سريع جدًا ومقبول للدقة                              |
+| T5 or BART                  | Encoder–Decoder    | ممكن تستخدمه لو عاوز تحويل النص أو تحليل معقد      |
+
