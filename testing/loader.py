@@ -23,6 +23,7 @@ if not project_root:
 
 module_tree = {
     "restmodel": project_root / "src" / "ai_model" / "rest_model.py",
+    "clip_model": project_root / "src" / "ai_model" / "clip_model.py",
     "pcphash": project_root / "src" / "cli_tool" / "hashing" / "perceptual_hash.py",
     "utilhash": project_root / "src" / "cli_tool" / "hashing" / "hash_utils.py",
     "cli_shell": project_root / "src" / "cli_tool" / "interface" / "cli_shell.py",
