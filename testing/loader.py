@@ -25,6 +25,8 @@ module_tree = {
     "resnet18_model": project_root / "src" / "ai_model" / "resnet18_model.py",
     "resnet50_model": project_root / "src" / "ai_model" / "resnet50_model.py",
     "resnet101_model": project_root / "src" / "ai_model" / "resnet101_model.py",
+    "efficientnet_b1_model": project_root / "src" / "ai_model" / "efficientnet_b1_model.py",
+    "efficientnet_b3_model": project_root / "src" / "ai_model" / "efficientnet_b3_model.py",
     "clip_model": project_root / "src" / "ai_model" / "clip_model.py",
     "pcphash": project_root / "src" / "cli_tool" / "hashing" / "perceptual_hash.py",
     "utilhash": project_root / "src" / "cli_tool" / "hashing" / "hash_utils.py",
