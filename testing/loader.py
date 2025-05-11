@@ -28,6 +28,7 @@ module_tree = {
     "efficientnet_b1_model": project_root / "src" / "ai_model" / "efficientnet_b1_model.py",
     "efficientnet_b3_model": project_root / "src" / "ai_model" / "efficientnet_b3_model.py",
     "clip_model": project_root / "src" / "ai_model" / "clip_model.py",
+    "dinov2_model": project_root / "src" / "ai_model" / "dinov2_model.py",
     "pcphash": project_root / "src" / "cli_tool" / "hashing" / "perceptual_hash.py",
     "utilhash": project_root / "src" / "cli_tool" / "hashing" / "hash_utils.py",
     "cli_shell": project_root / "src" / "cli_tool" / "interface" / "cli_shell.py",
