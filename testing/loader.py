@@ -31,6 +31,7 @@ module_tree = {
     "dinov2_model": project_root / "src" / "ai_model" / "dinov2_model.py",
     "sbert_model": project_root / "src" / "ai_model" / "sbert_model.py",
     "sbert_deep_model": project_root / "src" / "ai_model" / "sbert_deep_model.py",
+    "codebert_model": project_root / "src" / "ai_model" / "codebert_model.py",
     "pcphash": project_root / "src" / "cli_tool" / "hashing" / "perceptual_hash.py",
     "utilhash": project_root / "src" / "cli_tool" / "hashing" / "hash_utils.py",
     "cli_shell": project_root / "src" / "cli_tool" / "interface" / "cli_shell.py",
