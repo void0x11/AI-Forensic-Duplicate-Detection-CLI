@@ -13,3 +13,4 @@ pathlib
 open_clip_torch
 timm --no-cache-dir
 sentence-transformers
+transformers
