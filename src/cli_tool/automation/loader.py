@@ -36,7 +36,6 @@ module_tree = {
     "utilhash": project_root / "src" / "cli_tool" / "hashing" / "hash_utils.py",
     "cli_shell": project_root / "src" / "cli_tool" / "interface" / "cli_shell.py",
     "commands": project_root / "src" / "cli_tool" / "interface" / "commands.py",
-    "daily_snapshot": project_root / "src" / "cli_tool" / "automation" / "daily_snapshot.py",
 }
 
 # This script dynamically imports modules based on their file paths.

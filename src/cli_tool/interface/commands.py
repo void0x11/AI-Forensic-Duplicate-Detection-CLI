@@ -8,7 +8,8 @@ from loader import (
     efficientnet_b1_model, efficientnet_b3_model,
     clip_model, dinov2_model,
     sbert_model, sbert_deep_model,
-    codebert_model
+    codebert_model,
+    daily_snapshot
 )
 
 def detect_file_type(file_path):
@@ -50,19 +51,37 @@ def load_model_by_name(name):
 
 def main():
     try:
-        parser = argparse.ArgumentParser(description="Compare two files using AI hashing.")
-        parser.add_argument("--file1", required=True, help="Path to the first file")
-        parser.add_argument("--file2", required=True, help="Path to the second file")
+        parser = argparse.ArgumentParser(description="AI Hashing Tool for File Analysis")
+        parser.add_argument("--file1", help="Path to the first file")
+        parser.add_argument("--file2", help="Path to the second file")
         parser.add_argument("--model", help="Model to use explicitly")
         parser.add_argument("--threshold", type=float, default=0.9, help="Similarity threshold")
         parser.add_argument("--auto", action="store_true", help="Auto-select model based on file type")
+        parser.add_argument("--mode", choices=["compare", "snapshot"], help="Automation mode")
+        parser.add_argument("--folder", help="Target folder (required for snapshot mode)")
         args = parser.parse_args()
+
+        # === Handle snapshot mode ===
+        if args.mode == "snapshot":
+            if not args.folder:
+                print("❌ Please provide --folder with snapshot mode.")
+                return
+            daily_snapshot.main(args.folder)
+            return
+
+        # === Handle compare mode ===
+        if args.mode != "compare":
+            print("❌ Please use --mode compare or --mode snapshot.")
+            return
+
+        if not args.file1 or not args.file2:
+            print("❌ Please provide both --file1 and --file2 for comparison.")
+            return
 
         if not os.path.exists(args.file1) or not os.path.exists(args.file2):
             print("❌ One or both file paths are invalid.")
             return
 
-        # Prevent using --model and --auto together
         if args.auto and args.model:
             print("❌ You can't use --model and --auto together. Choose one.")
             return
