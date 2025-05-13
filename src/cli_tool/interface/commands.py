@@ -1,5 +1,6 @@
 import argparse
 import os
+import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Import all models and tools via loader
@@ -98,6 +99,8 @@ def main():
                 print("🔍 Duplicates Found:")
                 for f1, f2, label in results:
                     print(f"{label}:\n → {f1}\n → {f2}\n")
+                # ✅ Save the duplicates report
+                scan_duplicates.save_report(results)
             else:
                 print("✅ No duplicates found.")
             return
