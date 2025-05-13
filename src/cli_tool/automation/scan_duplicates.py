@@ -2,6 +2,52 @@ import os
 import numpy as np
 from itertools import combinations
 from sklearn.metrics.pairwise import cosine_similarity
+from datetime import datetime
+import json
+
+# === Report Directory Setup ===
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+BASE_REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+SCAN_DIR = os.path.join(BASE_REPORTS_DIR, "scan")
+
+os.makedirs(SCAN_DIR, exist_ok=True)
+
+# === Documentation ===
+"""
+scan_duplicates.py
+------------------
+
+This script performs AI-powered duplicate and near-duplicate detection across files in a specified folder.
+
+Supported File Types:
+- Images: .jpg, .jpeg, .png, .bmp
+- Text/Code: .txt, .md, .log, .py, .sh, .c, .java, etc.
+
+How it Works:
+1. Files are grouped by type and compared pairwise.
+2. For images:
+   - Stage 1: Perceptual hash (pHash) filtering using Hamming distance.
+   - Stage 2: Deep feature extraction using DINOv2 and ResNet50.
+   - The minimum similarity score between the two models is used to reduce false positives.
+3. For text/code:
+   - Deep embeddings are extracted using SBERT + CodeBERT.
+   - Cosine similarity is computed after concatenating both embeddings.
+
+Thresholds:
+- Perceptual Hash Similarity Threshold: 40%
+- AI Similarity Threshold: 40%
+
+Output:
+- A list of tuples indicating pairs of similar files and their match type:
+  - EXACT_DUPLICATE
+  - NEAR_DUPLICATE (sim=0.97)
+
+Usage:
+    python scan_duplicates.py --folder /path/to/folder
+
+This module is designed for forensic analysis, version control, and robust similarity detection.
+"""
+
 
 # Load dynamically via loader system
 from loader import (
@@ -107,6 +153,22 @@ def scan_folder_for_duplicates(folder_path):
 
     return duplicates
 
+def save_report(duplicates):
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    report_path = os.path.join(SCAN_DIR, f"duplicates_{timestamp}.json")
+    print(f"💾 Attempting to save report at: {report_path}")
+
+    report_data = [
+        {"file1": f1, "file2": f2, "match_type": tag}
+        for f1, f2, tag in duplicates
+    ]
+
+    with open(report_path, "w") as f:
+        json.dump(report_data, f, indent=2)
+
+    print(f"\n📝 Duplicate report saved to: {report_path}")
+
+
 # CLI
 if __name__ == "__main__":
     import argparse
@@ -116,9 +178,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     results = scan_folder_for_duplicates(args.folder)
+
     if results:
         print("🔍 Potential duplicates found:")
         for f1, f2, tag in results:
             print(f"{tag}:\n → {f1}\n → {f2}\n")
+        save_report(results)
     else:
         print("✅ No duplicates found.")
