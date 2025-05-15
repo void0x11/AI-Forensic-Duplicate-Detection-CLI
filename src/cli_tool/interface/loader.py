@@ -38,6 +38,7 @@ module_tree = {
     "commands": project_root / "src" / "cli_tool" / "interface" / "commands.py",
     "daily_snapshot": project_root / "src" / "cli_tool" / "automation" / "daily_snapshot.py",
     "scan_duplicates": project_root / "src" / "cli_tool" / "automation" / "scan_duplicates.py",
+    "tracker": project_root / "src" / "cli_tool" / "automation" / "folder_tracker.py",
 }
 
 # This script dynamically imports modules based on their file paths.

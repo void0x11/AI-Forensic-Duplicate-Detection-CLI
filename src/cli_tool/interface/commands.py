@@ -11,7 +11,8 @@ from loader import (
     sbert_model, sbert_deep_model,
     codebert_model,
     daily_snapshot,
-    scan_duplicates
+    scan_duplicates,
+    tracker
 )
 
 def detect_file_type(file_path):
@@ -77,8 +78,8 @@ def main():
         parser.add_argument("--model", help="Model to use explicitly")
         parser.add_argument("--threshold", type=float, default=0.9, help="Similarity threshold")
         parser.add_argument("--auto", action="store_true", help="Auto-select model based on file type")
-        parser.add_argument("--mode", choices=["compare", "snapshot", "duplicates"], help="Mode to run")
-        parser.add_argument("--folder", help="Target folder for snapshot or duplicates mode")
+        parser.add_argument("--mode", choices=["compare", "snapshot", "duplicates", "tracker"], help="Mode to run")
+        parser.add_argument("--folder", help="Target folder for snapshot, duplicates, or tracker mode")
         args = parser.parse_args()
 
         # === Mode: snapshot ===
@@ -105,9 +106,18 @@ def main():
                 print("✅ No duplicates found.")
             return
 
+        # === Mode: tracker ===
+        if args.mode == "tracker":
+            if not args.folder:
+                print("❌ Please provide --folder with tracker mode.")
+                return
+            print("🛰️ Starting live monitoring tracker...\n")
+            tracker.monitor_folder(args.folder)
+            return
+
         # === Mode: compare ===
         if args.mode != "compare":
-            print("❌ Please use --mode compare, --mode snapshot, or --mode duplicates.")
+            print("❌ Please use --mode compare, --mode snapshot, --mode duplicates, or --mode tracker.")
             return
 
         if not args.file1 or not args.file2:
