@@ -1,0 +1,34 @@
+
+=== ALERT [2025-05-15 13:08:00] ===
+[Snapshot Changes Detected]:
+/home/kali/Downloads/test.txt ==> NEW
+/home/kali/Downloads/logo.jpg ==> NEW
+/home/kali/Downloads/test.py ==> NEW
+
+=== ALERT [2025-05-15 13:14:24] ===
+[Snapshot Changes Detected]:
+/home/kali/Downloads/test.txt ==> NEW
+/home/kali/Downloads/logo.jpg ==> NEW
+/home/kali/Downloads/test.py ==> NEW
+[Duplicate Files Detected]:
+HASH_CHANGED (unsupported for AI models):
+ → /home/kali/Downloads/test.txt
+ → /home/kali/Downloads/md5.hash
+HASH_CHANGED (unsupported for AI models):
+ → /home/kali/Downloads/md5.hash
+ → /home/kali/Downloads/logo.jpg
+HASH_CHANGED (unsupported for AI models):
+ → /home/kali/Downloads/md5.hash
+ → /home/kali/Downloads/test.py
+
+=== ALERT [2025-05-15 13:15:19] ===
+[Duplicate Files Detected]:
+HASH_CHANGED (unsupported for AI models):
+ → /home/kali/Downloads/test.txt
+ → /home/kali/Downloads/md5.hash
+HASH_CHANGED (unsupported for AI models):
+ → /home/kali/Downloads/md5.hash
+ → /home/kali/Downloads/logo.jpg
+HASH_CHANGED (unsupported for AI models):
+ → /home/kali/Downloads/md5.hash
+ → /home/kali/Downloads/test.py

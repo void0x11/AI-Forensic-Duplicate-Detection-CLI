@@ -1,0 +1,12 @@
+[
+  {
+    "file1": "/home/kali/Documents/s.txt",
+    "file2": "/home/kali/Documents/ss.txt",
+    "match_type": "NEAR_DUPLICATE (sim=1.00)"
+  },
+  {
+    "file1": "/home/kali/Documents/script.sh",
+    "file2": "/home/kali/Documents/zcript.sh",
+    "match_type": "NEAR_DUPLICATE (sim=1.00)"
+  }
+]
