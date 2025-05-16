@@ -106,8 +106,12 @@ def scan_folder_for_duplicates(folder_path):
                     sim_scores.append(cosine_similarity([vec1_res], [vec2_res])[0][0])
 
                 if sim_scores:
-                    best_sim = min(sim_scores)
+                    best_sim = max(sim_scores)
                     if best_sim >= AI_SIMILARITY_THRESHOLD:
+                        duplicates.append((file1, file2, f"NEAR_DUPLICATE (sim={best_sim:.2f})"))
+                    else:
+                        print(f"🟡 Ignored image pair below threshold (sim={best_sim:.2f}):")
+                        print(f"   → {file1}→ {file2}")
                         duplicates.append((file1, file2, f"NEAR_DUPLICATE (sim={best_sim:.2f})"))
 
             elif group_name in ["text", "code"]:
@@ -117,7 +121,7 @@ def scan_folder_for_duplicates(folder_path):
                     with open(file2, 'rb') as f:
                         content2 = f.read().decode('utf-8', errors='ignore')
                     if len(content1.strip()) < 4 or len(content2.strip()) < 4:
-                        continue  # Skip files that are too short to compare meaningfully
+                        continue
 
                     vec1a = sbert_deep_model.extract_features_from_file(file1, sbert)
                     vec1b = codebert_model.extract_features_from_file(file1, tokenizer, codebert)

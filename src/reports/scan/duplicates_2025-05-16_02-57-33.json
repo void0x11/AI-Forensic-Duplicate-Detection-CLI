@@ -1,0 +1,17 @@
+[
+  {
+    "file1": "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/s.txt",
+    "file2": "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/ss.txt",
+    "match_type": "NEAR_DUPLICATE (sim=1.00)"
+  },
+  {
+    "file1": "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/Image1.jpg",
+    "file2": "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg",
+    "match_type": "EXACT_DUPLICATE"
+  },
+  {
+    "file1": "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/script.sh",
+    "file2": "/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/zcript.sh",
+    "match_type": "NEAR_DUPLICATE (sim=1.00)"
+  }
+]
