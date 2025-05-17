@@ -31,7 +31,7 @@ def colorful_ascii():
 
 def check_ai_model(name, loader_func):
     try:
-        print(f"{WARNING}🔄 Initializing AI model: {name:<20} {RESET}", end="")
+        print(f"{WARNING}[-] Initializing AI model: {name:<20} {RESET}", end="")
         loader_func()
         print(f"{SUCCESS}[+] OK{RESET}")
         return True
@@ -59,7 +59,7 @@ def boot_diagnostics():
     }
 
     for name, mod in core_checks.items():
-        print(f"{WARNING}🔄 Loading {name:<25} {RESET}", end="")
+        print(f"{WARNING}[-] Loading {name:<25} {RESET}", end="")
         if mod:
             print(f"{SUCCESS}[+] OK{RESET}")
         else:
