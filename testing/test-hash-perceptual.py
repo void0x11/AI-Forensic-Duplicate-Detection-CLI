@@ -37,6 +37,6 @@ def test_perceptual_hash(image1_path, image2_path):
 
 
 if __name__ == "__main__":
-    img1 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
-    img2 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image7.jpg"
+    img1 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
+    img2 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image7.jpg"
     test_perceptual_hash(img1, img2)

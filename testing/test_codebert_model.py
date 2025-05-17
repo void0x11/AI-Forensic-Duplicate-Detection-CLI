@@ -7,8 +7,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 tokenizer, model = codebert_model.load_model()
 
 # Files
-file1 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/script.sh"
-file2 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/zcript.sh"
+file1 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/script.sh"
+file2 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/zcript.sh"
 
 # Extract vector embeddings
 vec1 = codebert_model.extract_features_from_file(file1, tokenizer, model)

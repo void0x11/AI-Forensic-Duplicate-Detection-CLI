@@ -5,8 +5,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 model = sbert_model.load_model()
 
 # Paths to two text files
-file1 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/script.sh"
-file2 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/zcript.sh"
+file1 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/script.sh"
+file2 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/zcript.sh"
 
 # Extract semantic vectors
 vec1 = sbert_model.extract_features_from_file(file1, model)

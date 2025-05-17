@@ -5,8 +5,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 model, preprocess = clip_model.load_model()
 
 # Define your test images
-img1 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image5.jpg"
-img2 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image6.jpg"
+img1 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image5.jpg"
+img2 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image6.jpg"
 
 # Extract features (AI perceptual hashes)
 vec1 = clip_model.extract_features(img1, model, preprocess)

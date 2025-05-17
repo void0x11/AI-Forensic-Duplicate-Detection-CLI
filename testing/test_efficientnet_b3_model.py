@@ -4,8 +4,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 model = efficientnet_b3_model.load_model()
 transform = efficientnet_b3_model.get_transform()
 
-img1_path = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
-img2_path = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image4.jpg"
+img1_path = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
+img2_path = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image4.jpg"
 
 vec1 = efficientnet_b3_model.extract_features(img1_path, model, transform)
 vec2 = efficientnet_b3_model.extract_features(img2_path, model, transform)

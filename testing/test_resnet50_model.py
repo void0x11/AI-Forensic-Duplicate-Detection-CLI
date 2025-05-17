@@ -8,8 +8,8 @@ model = resnet50_model.load_model()
 transform = resnet50_model.get_transform()
 
 # Define paths to test images
-img1_path = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
-img2_path = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image4.jpg"
+img1_path = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
+img2_path = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image4.jpg"
 
 # Extract features
 vec1 = resnet50_model.extract_features(img1_path, model, transform)
