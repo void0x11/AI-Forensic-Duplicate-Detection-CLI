@@ -1,0 +1,17 @@
+[
+  {
+    "file1": "/home/void/Downloads/image5.jpg",
+    "file2": "/home/void/Downloads/image6.jpg",
+    "match_type": "NEAR_DUPLICATE (sim=0.98)"
+  },
+  {
+    "file1": "/home/void/Downloads/ss.txt",
+    "file2": "/home/void/Downloads/s.txt",
+    "match_type": "\n\nNEAR DUPLICATE (sim=1.00)"
+  },
+  {
+    "file1": "/home/void/Downloads/script.sh",
+    "file2": "/home/void/Downloads/zcript.sh",
+    "match_type": "\n\nNEAR DUPLICATE (sim=1.00)"
+  }
+]

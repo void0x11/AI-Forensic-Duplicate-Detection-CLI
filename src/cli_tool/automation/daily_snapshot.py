@@ -12,6 +12,15 @@ REPORT_DIR = os.path.join(BASE_REPORTS_DIR, "diffs")
 os.makedirs(SNAPSHOT_DIR, exist_ok=True)
 os.makedirs(REPORT_DIR, exist_ok=True)
 
+def status(msg):
+    print(f"[*] {msg}")
+
+def info(msg):
+    print(f"[+] {msg}")
+
+def warning(msg):
+    print(f"[!] {msg}")
+
 def detect_file_type(file_path):
     ext = os.path.splitext(file_path)[1].lower()
     text_extensions = [
@@ -61,7 +70,7 @@ def load_model_for_type(file_type, file_path=None):
         except:
             return None, None, None
     elif file_type == "text":
-        if file_path and file_path.endswith(('.sh', '.py', '.c', '.cpp', '.java', '.js')):
+        if file_path and file_path.endswith((".sh", ".py", ".c", ".cpp", ".java", ".js")):
             try:
                 sbert = sbert_deep_model.load_model()
                 tokenizer, codebert = codebert_model.load_model()
@@ -173,11 +182,11 @@ def main(folder):
     snapshot_filename = generate_snapshot_filename(folder)
     snapshot = generate_snapshot(folder)
     snapshot_path = save_snapshot(snapshot, snapshot_filename)
-    print(f"✅ Snapshot saved: {snapshot_path}")
+    info(f"Snapshot saved: {snapshot_path}")
 
     prev_name, prev_snapshot = load_latest_snapshot(before_filename=snapshot_filename)
     if prev_snapshot:
-        print(f"🔍 Comparing with previous snapshot: {prev_name}")
+        info(f"Comparing with previous snapshot: {prev_name}")
         changes = compare_snapshots(prev_snapshot, snapshot)
         if changes:
             diff_name = f"diff_{snapshot_filename.replace('.txt', '')}_vs_{prev_name.replace('.txt','')}.txt"
@@ -185,11 +194,11 @@ def main(folder):
             with open(report_path, "w") as f:
                 for path, msg in changes:
                     f.write(f"{path} ==> {msg}\n")
-            print(f"📝 Changes detected: {len(changes)} (saved to {report_path})")
+            warning(f"Changes detected: {len(changes)} (saved to {report_path})")
         else:
-            print("✅ No significant changes since last snapshot.")
+            status("No significant changes since last snapshot.")
     else:
-        print("ℹ️ No previous snapshot to compare.")
+        status("No previous snapshot to compare.")
 
 if __name__ == "__main__":
     import argparse

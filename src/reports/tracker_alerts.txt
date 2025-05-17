@@ -32,3 +32,56 @@ HASH_CHANGED (unsupported for AI models):
 HASH_CHANGED (unsupported for AI models):
  → /home/kali/Downloads/md5.hash
  → /home/kali/Downloads/test.py
+
+=== ALERT [2025-05-17 13:18:30] ===
+[Snapshot Changes Detected]:
+/home/void/Downloads/AA76fRYk worksheet - audit-T01201320-AA76fRYk.pdf ==> NEW
+/home/void/Downloads/script.sh ==> NEW
+/home/void/Downloads/image3.jpg ==> NEW
+/home/void/Downloads/ss.txt ==> NEW
+/home/void/Downloads/zcript.sh ==> NEW
+/home/void/Downloads/image4.jpg ==> NEW
+/home/void/Downloads/image5.jpg ==> NEW
+/home/void/Downloads/Image2.png ==> NEW
+/home/void/Downloads/s.txt ==> NEW
+/home/void/Downloads/image6.jpg ==> NEW
+[Duplicate Files Detected]:
+NEAR_DUPLICATE (sim=1.00):
+ → /home/void/Downloads/ss.txt
+ → /home/void/Downloads/s.txt
+NEAR_DUPLICATE (sim=1.00):
+ → /home/void/Downloads/script.sh
+ → /home/void/Downloads/zcript.sh
+NEAR_DUPLICATE (sim=0.98):
+ → /home/void/Downloads/image5.jpg
+ → /home/void/Downloads/image6.jpg
+NEAR_DUPLICATE (sim=0.94):
+ → /home/void/Downloads/image3.jpg
+ → /home/void/Downloads/image4.jpg
+NEAR_DUPLICATE (sim=0.84):
+ → /home/void/Downloads/image3.jpg
+ → /home/void/Downloads/Image2.png
+NEAR_DUPLICATE (sim=0.83):
+ → /home/void/Downloads/image4.jpg
+ → /home/void/Downloads/Image2.png
+
+=== ALERT [2025-05-17 13:20:05] ===
+[Duplicate Files Detected]:
+NEAR_DUPLICATE (sim=1.00):
+ → /home/void/Downloads/ss.txt
+ → /home/void/Downloads/s.txt
+NEAR_DUPLICATE (sim=1.00):
+ → /home/void/Downloads/script.sh
+ → /home/void/Downloads/zcript.sh
+NEAR_DUPLICATE (sim=0.98):
+ → /home/void/Downloads/image5.jpg
+ → /home/void/Downloads/image6.jpg
+NEAR_DUPLICATE (sim=0.94):
+ → /home/void/Downloads/image3.jpg
+ → /home/void/Downloads/image4.jpg
+NEAR_DUPLICATE (sim=0.84):
+ → /home/void/Downloads/image3.jpg
+ → /home/void/Downloads/Image2.png
+NEAR_DUPLICATE (sim=0.83):
+ → /home/void/Downloads/image4.jpg
+ → /home/void/Downloads/Image2.png
