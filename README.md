@@ -32,6 +32,12 @@ git clone https://github.com/void0x11/AI-Forensic-Duplicate-Detection-CLI
 cd AI-Forensic-Duplicate-Detection-CLI
 ```
 
+Create Virtual Enviroment
+```
+python3 -m venv myenv
+source myenv/bin/activate
+```
+
 Install on Linux:
 ```bash
 pip install -r requirements.txt
