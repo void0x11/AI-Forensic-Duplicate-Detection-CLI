@@ -6,8 +6,8 @@ model = dinov2_model.load_model()
 transform = dinov2_model.get_transform()
 
 # Image paths
-img1 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image5.jpg"
-img2 = r"/home/kali/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image6.jpg"
+img1 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image3.jpg"
+img2 = r"/home/void/Github/AI-Forensic-Duplicate-Detection-CLI/src/ai_model/sample_cases/image4.jpg"
 
 # Extract features
 vec1 = dinov2_model.extract_features(img1, model, transform)

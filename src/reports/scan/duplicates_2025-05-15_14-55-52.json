@@ -1,7 +1,0 @@
-[
-  {
-    "file1": "/home/kali/Downloads/test.txt",
-    "file2": "/home/kali/Downloads/md5.txt",
-    "match_type": "NEAR_DUPLICATE (sim=0.99)"
-  }
-]
