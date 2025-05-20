@@ -1,0 +1,5 @@
+/home/void/Downloads/script.sh ==> NEW
+/home/void/Downloads/ss.txt ==> NEW
+/home/void/Downloads/zcript.sh ==> NEW
+/home/void/Downloads/image7.jpg ==> NEW
+/home/void/Downloads/s.txt ==> NEW

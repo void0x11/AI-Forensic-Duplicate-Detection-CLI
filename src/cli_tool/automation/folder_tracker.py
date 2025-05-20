@@ -4,6 +4,7 @@
 import os
 import time
 import json
+import numpy as np
 from datetime import datetime
 from loader import daily_snapshot, scan_duplicates
 
@@ -11,7 +12,7 @@ CHECK_INTERVAL = 30  # seconds between checks (can be adjusted)
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 ALERT_LOG = os.path.join(BASE_DIR, "reports", "tracker_alerts.txt")
-TRACKER_STATE = os.path.join(BASE_DIR, "reports", "tracker_state.json")
+
 
 def status(msg):
     print(f"[*] {msg}")
@@ -22,40 +23,25 @@ def info(msg):
 def warning(msg):
     print(f"[!] {msg}")
 
-def load_state():
-    if os.path.exists(TRACKER_STATE):
-        with open(TRACKER_STATE, 'r') as f:
-            return json.load(f)
-    return {}
-
-def save_state(state):
-    with open(TRACKER_STATE, 'w') as f:
-        json.dump(state, f, indent=2)
-
-import numpy as np
 
 def monitor_folder(folder_path):
     status(f"Tracker started on folder: {folder_path}")
     status(f"Checking every {CHECK_INTERVAL} seconds\n")
 
-    state = load_state()
-    baseline_snapshot = state.get("baseline_snapshot")
-    if baseline_snapshot:
-        for path in baseline_snapshot:
-            entry = baseline_snapshot[path]
-            if entry["mode"] == "AI":
-                entry["value"] = np.array(entry["value"])
-    baseline_duplicates = state.get("baseline_duplicates", [])
+    snapshot_file = os.path.join(BASE_DIR, "reports", "tracker_baseline_snapshot.txt")
 
-    if baseline_snapshot is None:
-        info("No previous snapshot found. Creating baseline...")
-        snapshot = daily_snapshot.generate_snapshot(folder_path)
-        state["baseline_snapshot"] = snapshot
-        info("Running initial duplicate scan...")
-        duplicates = scan_duplicates.scan_folder_for_duplicates(folder_path)
-        state["baseline_duplicates"] = duplicates
-        save_state(state)
-        info("Initial baseline established.")
+    if not os.path.exists(snapshot_file):
+        info("No previous baseline snapshot found. Generating...")
+        baseline = daily_snapshot.generate_snapshot(folder_path)
+        daily_snapshot.daily_snapshot.save_snapshot(baseline, "tracker_baseline_snapshot.txt")
+        info("Baseline snapshot saved. Waiting for changes...")
+        time.sleep(CHECK_INTERVAL)
+
+    baseline = daily_snapshot.load_snapshot("tracker_baseline_snapshot.txt")
+    for path in baseline:
+        entry = baseline[path]
+        if entry["mode"] == "AI":
+            entry["value"] = np.array(entry["value"])
 
     while True:
         try:
@@ -65,7 +51,8 @@ def monitor_folder(folder_path):
                 entry = current_snapshot[path]
                 if entry["mode"] == "AI":
                     entry["value"] = np.array(entry["value"])
-            changes = daily_snapshot.compare_snapshots(state["baseline_snapshot"], current_snapshot, threshold=1.0)
+
+            changes = daily_snapshot.compare_snapshots(baseline, current_snapshot, threshold=1.0)
 
             if not changes:
                 status(f"{timestamp}: No snapshot changes.")
@@ -77,9 +64,7 @@ def monitor_folder(folder_path):
 
             # Build set of baseline duplicate file paths
             old_dup_paths = set()
-            for entry in state["baseline_duplicates"]:
-                old_dup_paths.add(entry[0])
-                old_dup_paths.add(entry[1])
+            baseline_dups = []  # load from previous alert log if needed
 
             # Detect newly duplicated files only
             new_only = []
@@ -102,15 +87,15 @@ def monitor_folder(folder_path):
             else:
                 status(f"{timestamp}: Snapshot changed but no new duplicates.")
 
-            # Update baseline
-            state["baseline_snapshot"] = current_snapshot
-            state["baseline_duplicates"] = new_duplicates
-            save_state(state)
+            # Update baseline snapshot file
+            save_snapshot(current_snapshot, "tracker_baseline_snapshot.txt")
+            baseline = current_snapshot
 
         except Exception as e:
             warning(f"Error during monitoring: {e}")
 
         time.sleep(CHECK_INTERVAL)
+
 
 # CLI entry point
 if __name__ == "__main__":
@@ -122,10 +107,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     try:
-        while True:
-            monitor_folder(args.folder)
-            if keyboard.is_pressed('esc'):
-                print("\n[!] ESC key pressed. Exiting tracker.")
-                break
+        info("Press ESC to stop the tracker.")
+        monitor_folder(args.folder)
     except KeyboardInterrupt:
         print("\n[!] Tracker stopped by user.")

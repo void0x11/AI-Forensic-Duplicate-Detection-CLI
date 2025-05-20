@@ -1,0 +1,47 @@
+[
+  {
+    "file1": "/home/void/Downloads/ss.txt",
+    "file2": "/home/void/Downloads/s.txt",
+    "match_type": "NEAR_DUPLICATE (sim=1.00)"
+  },
+  {
+    "file1": "/home/void/Downloads/script.sh",
+    "file2": "/home/void/Downloads/zcript.sh",
+    "match_type": "NEAR_DUPLICATE (sim=1.00)"
+  },
+  {
+    "file1": "/home/void/Downloads/image5.jpg",
+    "file2": "/home/void/Downloads/image6.jpg",
+    "match_type": "NEAR_DUPLICATE (sim=0.98)"
+  },
+  {
+    "file1": "/home/void/Downloads/image3.jpg",
+    "file2": "/home/void/Downloads/image4.jpg",
+    "match_type": "NEAR_DUPLICATE (sim=0.94)"
+  },
+  {
+    "file1": "/home/void/Downloads/image7.jpg",
+    "file2": "/home/void/Downloads/image4.jpg",
+    "match_type": "NEAR_DUPLICATE (sim=0.94)"
+  },
+  {
+    "file1": "/home/void/Downloads/image3.jpg",
+    "file2": "/home/void/Downloads/image7.jpg",
+    "match_type": "NEAR_DUPLICATE (sim=0.87)"
+  },
+  {
+    "file1": "/home/void/Downloads/image3.jpg",
+    "file2": "/home/void/Downloads/Image2.png",
+    "match_type": "NEAR_DUPLICATE (sim=0.84)"
+  },
+  {
+    "file1": "/home/void/Downloads/image4.jpg",
+    "file2": "/home/void/Downloads/Image2.png",
+    "match_type": "NEAR_DUPLICATE (sim=0.83)"
+  },
+  {
+    "file1": "/home/void/Downloads/image7.jpg",
+    "file2": "/home/void/Downloads/Image2.png",
+    "match_type": "NEAR_DUPLICATE (sim=0.76)"
+  }
+]

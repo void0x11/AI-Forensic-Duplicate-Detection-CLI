@@ -57,3 +57,54 @@
 [2025-05-17 14:12:55] set mode tracker
 [2025-05-17 14:13:22] set path /home/void/Downloads
 [2025-05-17 14:13:44] run
+[2025-05-17 14:21:19] help
+[2025-05-17 14:21:31] set path /home/void/Downloads
+[2025-05-17 14:22:03] set mode tracker
+[2025-05-17 14:22:05] show
+[2025-05-17 14:22:13] run
+[2025-05-17 14:26:32] help
+[2025-05-17 14:26:36] set mode tracker
+[2025-05-17 14:27:29] set path /home/void/Downloads
+[2025-05-17 14:27:33] run
+[2025-05-17 14:33:04] help
+[2025-05-17 14:33:08] set mode tracker
+[2025-05-17 14:33:18] set path /home/void/Downloads
+[2025-05-17 14:33:20] show
+[2025-05-17 14:33:21] run
+[2025-05-17 14:38:21] set path /home/void/Downloads
+[2025-05-17 14:38:29] set mode tracker
+[2025-05-17 14:38:31] run
+[2025-05-17 14:45:17] set mode tracker
+[2025-05-17 14:45:31] set path /home/void/Downloads
+[2025-05-17 14:45:32] run
+[2025-05-17 14:46:55] set mode tracker
+[2025-05-17 14:47:07] set path /home/void/Downloads
+[2025-05-17 14:47:09] run
+[2025-05-17 14:53:53] help
+[2025-05-17 14:54:04] set path /home/void/Downloads
+[2025-05-17 14:54:11] set mode tracker
+[2025-05-17 14:54:13] run
+[2025-05-17 14:59:30] help
+[2025-05-17 14:59:36] set mode tracker
+[2025-05-17 14:59:50] set path /home/void/Downloads
+[2025-05-17 14:59:52] run
+[2025-05-17 15:01:14] set mode tracker
+[2025-05-17 15:01:30] set path /home/void/Downloads
+[2025-05-17 15:01:34] run
+[2025-05-17 15:09:46] set path /home/void/Downloads
+[2025-05-17 15:09:54] set mode tracker
+[2025-05-17 15:09:56] run
+[2025-05-17 15:10:23] run
+[2025-05-17 15:11:01] exit
+[2025-05-17 15:19:54] set path /home/void/Downloads
+[2025-05-17 15:19:58] set mode tracker
+[2025-05-17 15:20:00] run
+[2025-05-17 15:20:44] set mode snapshot
+[2025-05-17 15:20:48] run
+[2025-05-17 15:22:04] exit
+[2025-05-18 19:09:05] help
+[2025-05-18 19:09:13] help set
+[2025-05-18 19:09:29] set path /home/void/Downloads
+[2025-05-18 19:09:38] set mode duplicates
+[2025-05-18 19:09:48] show
+[2025-05-18 19:09:52] run
